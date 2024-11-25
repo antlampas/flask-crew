@@ -2,6 +2,7 @@ from flask                         import current_app
 from flask_security.models         import fsqla_v3                                               as fsqla
 from sqlalchemy.orm                import DeclarativeBase,MappedAsDataclass,Mapped,mapped_column
 from sqlalchemy_imageattach.entity import Image,image_attachment
+from flask_admin.contrib.sqla      import ModelView
 
 current_app.user_datastore = SQLAlchemyUserDatastore(current_app.database,User,Role)
 
