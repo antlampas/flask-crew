@@ -18,3 +18,7 @@ class CrewMember(User):
     last_name:  Mapped[str]
 
 current_app.database.create_all()
+
+current_app.admin.add_view(ModelView(User, current_app.db.session))
+current_app.admin.add_view(ModelView(Role, current_app.db.session))
+current_app.admin.add_view(ModelView(CrewMember, current_app.db.session))
