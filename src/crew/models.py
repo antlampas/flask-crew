@@ -1,13 +1,8 @@
-from flask                         import current_app
-from flask_security.models         import fsqla_v3                                               as fsqla
-from sqlalchemy.orm                import DeclarativeBase,MappedAsDataclass,Mapped,mapped_column
-from flask_security                import SQLAlchemyUserDatastore
-
-
-class Role(current_app.database.Model, fsqla.FsRoleMixin):
-    pass
-class User(current_app.database.Model, fsqla.FsUserMixin):
-    pass
+from flask                    import current_app
+from flask_security.models    import fsqla_v3                                               as fsqla
+from sqlalchemy.orm           import DeclarativeBase,MappedAsDataclass,Mapped,mapped_column
+from flask_security           import SQLAlchemyUserDatastore
+from flask_admin.contrib.sqla import ModelView
 
 class CrewMember(User):
     __tablename__ = "crew_members"
@@ -18,8 +13,4 @@ class CrewMember(User):
 
 current_app.database.create_all()
 
-current_app.user_datastore = SQLAlchemyUserDatastore(current_app.database,User,Role)
-
-current_app.admin.add_view(ModelView(User,current_app.db.session))
-current_app.admin.add_view(ModelView(Role,current_app.db.session))
 current_app.admin.add_view(ModelView(CrewMember,current_app.db.session))
