@@ -1,6 +1,7 @@
 from flask                         import current_app
 from flask_security.models         import fsqla_v3                                               as fsqla
 from sqlalchemy.orm                import DeclarativeBase,MappedAsDataclass,Mapped,mapped_column
+from flask_security                import SQLAlchemyUserDatastore
 
 current_app.user_datastore = SQLAlchemyUserDatastore(current_app.database,User,Role)
 
