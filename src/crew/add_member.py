@@ -10,7 +10,7 @@ from .forms         import crewMemberForm
 @crew_blueprint.route('/add',methods = ['GET','POST'])
 @auth_required()
 def add_member_view():
-    crewMemberForm = crewMemberForm();
+    crew_member_form = crewMemberForm();
     if request.method == 'POST':
         crew_member = crewMember()
         username   = request.form.username
@@ -28,6 +28,6 @@ def add_member_view():
         current_app.database.session.add(crew_member)
         current_app.database.session.commit()
         return redirect(url_for('articles.show_crew_view'))
-    return render_template('addMember.html',form=article_form,sectionname="Nuovo membro",next=request.path)
+    return render_template('addMember.html',form=crew_member_form,sectionname="Nuovo membro",next=request.path)
 
 current_menu.submenu(".crew.add").register(text='Add',external_url=crew_blueprint.url_prefix+"/add",logged_only=True)
