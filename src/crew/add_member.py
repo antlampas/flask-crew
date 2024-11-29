@@ -1,5 +1,6 @@
 from flask          import current_app
 from flask_security import auth_required
+from flask_menu     import current_menu
 
 from .blueprint     import crew_blueprint
 from .models        import CrewMember
