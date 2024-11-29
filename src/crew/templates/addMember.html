@@ -2,13 +2,13 @@
 
 {% block content %}
 <form style="text-align:center" method='POST'>
-    {{ form.username.label   }}{{ form.username()   }}<br>
-    {{ form.email.label      }}{{ form.email()      }}<br>
-    {{ form.password.label   }}{{ form.password()   }}<br>
-    {{ form.first_name.label }}{{ form.first_name() }}<br>
-    {{ form.last_name.label  }}{{ form.last_name()  }}<br>
-    {{ form.nickname.label   }}{{ form.nickname()   }}<br>
-    {{ form.rank             }}{{ form.rank         }}<br>
+    {{ form.username.label   }}&nbsp;{{ form.username()   }}<br>
+    {{ form.email.label      }}&nbsp;{{ form.email()      }}<br>
+    {{ form.password.label   }}&nbsp;{{ form.password()   }}<br>
+    {{ form.first_name.label }}&nbsp;{{ form.first_name() }}<br>
+    {{ form.last_name.label  }}&nbsp;{{ form.last_name()  }}<br>
+    {{ form.nickname.label   }}&nbsp;{{ form.nickname()   }}<br>
+    {{ form.rank.label       }}&nbsp;{{ form.rank()       }}<br>
     <br>
     {{ form.submit() }}
 </form>
