@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form style="text-align:center" action='/crew/add?title={{ form.title.data }}' method='POST'>
+<form style="text-align:center" method='POST'>
     {{ form.username.label   }}{{ form.username()   }}<br>
     {{ form.email.label      }}{{ form.email()      }}<br>
     {{ form.password.label   }}{{ form.password()   }}<br>
