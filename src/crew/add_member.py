@@ -30,4 +30,4 @@ def add_member_view():
         return redirect(url_for('articles.show_crew_view'))
     return render_template('addMember.html',form=crew_member_form,sectionname="Nuovo membro",next=request.path)
 
-MenuNode("Add",".crew").register(text='Add',external_url=crew_blueprint.url_prefix+"/add",logged_only=True)
+current_app.menu.root().submenu(".crew.add").register(text='Add',external_url=crew_blueprint.url_prefix+"/add",logged_only=True)
