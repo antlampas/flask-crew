@@ -12,5 +12,3 @@ class CrewMember(current_app.database.Model):
     rank:     Mapped[str] = mapped_column(nullable=False)
 
 current_app.database.create_all()
-
-current_app.admin.add_view(ModelView(CrewMember,current_app.database.session))
