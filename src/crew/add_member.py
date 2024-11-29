@@ -1,8 +1,9 @@
-from flask      import current_app
+from flask          import current_app
+from flask_security import auth_required
 
-from .blueprint import crew_blueprint
-from .models    import CrewMember
-from .forms     import crewMemberForm
+from .blueprint     import crew_blueprint
+from .models        import CrewMember
+from .forms         import crewMemberForm
 
 
 @crew_blueprint.route('/add',methods = ['GET','POST'])
