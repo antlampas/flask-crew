@@ -9,7 +9,7 @@ from .forms     import crewMemberForm
 @auth_required()
 def add_member_view():
     crewMemberForm = crewMemberForm();
-    if request.method === 'POST':
+    if request.method == 'POST':
         crew_member = crewMember()
         username   = request.form.username
         email      = request.form.email
