@@ -1,6 +1,6 @@
 from flask          import current_app,request,redirect,render_template
 from flask_security import auth_required
-from flask_menu     import MenuEntryMixin
+from flask_menu     import MenuNode
 
 from .blueprint     import crew_blueprint
 from .models        import CrewMember
@@ -30,4 +30,4 @@ def add_member_view():
         return redirect(url_for('articles.show_crew_view'))
     return render_template('addMember.html',form=crew_member_form,sectionname="Nuovo membro",next=request.path)
 
-MenuEntryMixin("Add",".crew.add").register(text='Add',external_url=crew_blueprint.url_prefix+"/add",logged_only=True)
+MenuNode("Add",".crew").register(text='Add',external_url=crew_blueprint.url_prefix+"/add",logged_only=True)
